@@ -24,7 +24,7 @@ async def settings(bot, update):
                 chat_id = update.chat.id,
                 text=f"""പിന്നെ നി ആണല്ലോ അഡ്മിൻ 😒""",
                 parse_mode=enums.ParseMode.HTML,
-                reply_to_message_id=update.message_id
+                reply_to_message_id=update.id
         )
         return
     
@@ -79,7 +79,7 @@ async def settings(bot, update):
         text=text, 
         reply_markup=reply_markup, 
         parse_mode=enums.ParseMode.HTML,
-        reply_to_message_id=update.message_id
+        reply_to_message_id=update.id
         
         )
 
