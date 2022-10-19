@@ -1,4 +1,4 @@
-from pyrogram import Client,filters
+from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait
 import re, io
 import asyncio
@@ -272,7 +272,7 @@ async def addfilter(client, message):
         return
     
     await add_filter(text, reply_text, btn, fileid)
-    await message.reply_text(text = f'Filter Added : <code> {text} </code>', reply_to_message_id=message.message_id)
+    await message.reply_text(text = f'Filter Added : <code> {text} </code>', reply_to_message_id=message.id)
     #await add_filter(grp_id, text, reply_text, btn, fileid, alert)
     
 
@@ -383,5 +383,5 @@ async def request(bot, message):
         chat_id=message.chat.id,
         text= Presets.COMMANDS,
         disable_web_page_preview=True,
-        reply_to_message_id=message.message_id
+        reply_to_message_id=message.id
     )
